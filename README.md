@@ -48,27 +48,53 @@
 
 ### 會員API
 
-- `GET /api/members` - 獲取所有會員
-- `GET /api/members/{id}` - 根據ID獲取會員
-- `POST /api/members` - 創建新會員
-- `PUT /api/members/{id}` - 更新會員資料
+- `POST /api/members` - 創建會員
+- `PUT /api/members/{id}` - 更新會員
+- `GET /api/members/{id}` - 根據ID查詢會員
+- `GET /api/members/page` - 分頁查詢所有會員
+  - 參數: `page`, `size`, `sortBy`, `direction`
+- `GET /api/members/search/username` - 根據用戶名模糊查詢會員（分頁）
+  - 參數: `username`, `page`, `size`
+- `GET /api/members/search/email` - 根據郵箱模糊查詢會員（分頁）
+  - 參數: `email`, `page`, `size`
 - `DELETE /api/members/{id}` - 刪除會員
+- `GET /api/members/check/username` - 檢查用戶名是否存在
+  - 參數: `username`
+- `GET /api/members/check/email` - 檢查郵箱是否存在
+  - 參數: `email`
 
 ### 產品API
 
-- `GET /api/products` - 獲取所有產品
-- `GET /api/products/{id}` - 根據ID獲取產品
-- `POST /api/products` - 創建新產品
-- `PUT /api/products/{id}` - 更新產品資料
+- `POST /api/products` - 創建產品
+- `PUT /api/products/{id}` - 更新產品
+- `GET /api/products/{id}` - 根據ID查詢產品
+- `GET /api/products` - 查詢所有產品（分頁）
+  - 參數: `page`, `size`, `sortBy`, `direction`
+- `GET /api/products/search/name` - 根據產品名稱模糊查詢產品（分頁）
+  - 參數: `name`, `page`, `size`
+- `GET /api/products/search/price` - 根據價格範圍查詢產品（分頁）
+  - 參數: `minPrice`, `maxPrice`, `page`, `size`
 - `DELETE /api/products/{id}` - 刪除產品
 
 ### 訂單API
 
-- `GET /api/orders` - 獲取所有訂單
-- `GET /api/orders/{id}` - 根據ID獲取訂單
-- `POST /api/orders` - 創建新訂單
+- `POST /api/orders` - 創建訂單
+- `GET /api/orders/{id}` - 根據ID查詢訂單
+- `GET /api/orders/number/{orderNumber}` - 根據訂單編號查詢訂單
+- `GET /api/orders/member/{memberId}` - 根據會員ID查詢訂單（分頁）
+  - 參數: `page`, `size`, `sortBy`, `sortDir`
+- `GET /api/orders/product` - 根據產品名稱查詢訂單（分頁）
+  - 參數: `productName`, `page`, `size`, `sortBy`, `sortDir`
+- `GET /api/orders/date-range` - 根據日期範圍查詢訂單（分頁）
+  - 參數: `startDate`, `endDate`, `page`, `size`, `sortBy`, `sortDir`
+- `GET /api/orders/search` - 綜合查詢訂單（分頁）
+  - 參數: `orderNumber`, `productName`, `startDate`, `endDate`, `page`, `size`, `sortBy`, `sortDir`
 - `PUT /api/orders/{id}/status` - 更新訂單狀態
+  - 參數: `status`
+- `PUT /api/orders/{id}/cancel` - 取消訂單
 - `DELETE /api/orders/{id}` - 刪除訂單
+- `GET /api/orders/stats/members` - 統計訂單數量大於指定數量的會員
+  - 參數: `count`
 
 ## 資料初始化
 
