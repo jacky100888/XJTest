@@ -113,7 +113,6 @@ src/main/java/com/example/demo/
 ├── config/           # 配置類
 ├── controller/       # API控制器
 ├── exception/        # 自定義異常和全局異常處理
-├── model/            # 
 ├── bean/             # 傳輸對象類
 │   └── model/        # 實體類
 │   └── request/      # 請求類
