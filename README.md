@@ -113,23 +113,16 @@ src/main/java/com/example/demo/
 ├── config/           # 配置類
 ├── controller/       # API控制器
 ├── exception/        # 自定義異常和全局異常處理
-├── model/            # 實體類
+├── model/            # 
+├── bean/             # 傳輸對象類
+│   └── model/        # 實體類
+│   └── request/      # 請求類
+│   └── response/     # 回應類
 ├── repository/       # 資料訪問層
 ├── service/          # 業務邏輯層
 │   └── impl/         # 業務邏輯實現
 └── DemoApplication.java  # 應用入口
 ```
-
-### API文檔
-
-本項目使用SpringDoc OpenAPI (Swagger)來生成API文檔，提供了以下功能：
-
-- 自動生成API文檔
-- 交互式API測試界面
-- API請求和返回模型展示
-- 支持API分組和標籤
-
-訪問Swagger UI：http://localhost:8080/swagger-ui/index.html
 
 ### 錯誤處理機制
 
